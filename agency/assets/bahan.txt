@@ -1,0 +1,50 @@
+<table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Sub Menu</th>
+                    <th scope="col">Menu_id</th>
+                    <th scope="col">Url</th>
+                    <th scope="col">Icon</th>
+                    <th scope="col">Active</th>
+                    <th scope="col">Action</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <?php $i = 1; ?>
+                <?php foreach ($siswa as $si) : ?>
+                    <tr>
+                        <th scope="row"> <?= $i; ?> </th>
+                        <td> <?= $si['nama']; ?> </td>
+                        <td> <?= $si['foto']; ?> </td>
+                        <td> <?= $si['alamat']; ?> </td>
+                        <td> <?= $si['no hp']; ?> </td>
+                        <td> <?= $si['quote']; ?> </td>
+                        <td>
+                            <a href="" class="badge badge-success">Edit</a>
+                            <a href="" class="badge badge-danger">Delete</a>
+                        </td>
+                    </tr>
+                    <?php $i++; ?>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+====================
+
+    <?php foreach ($latihan as $latihan) { ?>
+            zul <?= $latihan->nama; ?>
+        <?php } ?>
+=================
+        <?php foreach ($where as $where) { ?>
+            zul <?= $where; ?>
+        <?php } ?>
+    ======================
+            $data['latihan'] = $this->gallery->latihan()->result();
+        $data['where'] = $this->gallery->lWhere(['id' => 1])->result();
+        $data['siswa'] = $this->gallery->getData();
+=========== gambar
+        <?php foreach ($latihan as $latihan) { ?>
+            <img src="agency/assets/img/<?= $latihan->foto; ?>">
+        <?php } ?>
